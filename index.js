@@ -1,6 +1,9 @@
 let indice = 0;
 const participantes = [];
-const VALOR_VITORIA = 0.5;
+
+function getValorVitoria() {
+  return document.getElementById("valor_vitoria").value;
+}
 
 function atualizarParticipantes() {
   if (!participantes?.length) {
@@ -87,7 +90,7 @@ function calcular() {
         ) {
           dividas.push({
             ids: { idDevedor: devedor.id, idRecebedor: recebedor.id },
-            valor: VALOR_VITORIA * recebedor.vitorias,
+            valor: getValorVitoria() * recebedor.vitorias,
           });
         } else {
           const divida = dividas.find(
@@ -95,7 +98,7 @@ function calcular() {
               JSON.stringify(Object.values(d.ids).sort(idCrescente)) ===
               JSON.stringify([devedor.id, recebedor.id].sort(idCrescente))
           );
-          divida.valor -= VALOR_VITORIA * recebedor.vitorias;
+          divida.valor -= getValorVitoria() * recebedor.vitorias;
         }
       }
     }

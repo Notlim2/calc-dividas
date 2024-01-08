@@ -25,6 +25,7 @@ input {
   background-color: var(--input);
   height: 100%;
   font-size: 0.9rem;
+  width: 100%;
 }
 
 button {
@@ -36,6 +37,21 @@ button {
   border-radius: 8px;
   padding: 8px 16px;
   cursor: pointer;
+  font-size: 1.15rem;
+}
+
+#div_valor_vitoria {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  border-bottom: solid 1px var(--primary);
+  padding-bottom: 8px;
+}
+
+#div_valor_vitoria > label {
+  white-space: nowrap;
+  font-weight: bold;
   font-size: 1.15rem;
 }
 
@@ -53,10 +69,6 @@ form {
 
 form > span {
   flex-grow: 1;
-}
-
-form > span > input {
-  width: 100%;
 }
 
 #participantes th {
@@ -86,12 +98,12 @@ form > span > input {
 
 #resultado {
   width: 100%;
-  display: flex;
   flex-direction: column;
   gap: 8px;
   background-color: var(--input);
   padding: 16px;
   border-radius: 8px;
+  display: none;
 }
 
 #resultado > div {

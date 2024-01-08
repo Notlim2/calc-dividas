@@ -47,6 +47,7 @@ function atualizarResultado(dividas) {
   }
 
   const divResultado = document.getElementById("resultado");
+  divResultado.style.display = "flex";
   divResultado.innerHTML = "";
 
   for (const divida of dividas) {

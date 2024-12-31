@@ -88,10 +88,13 @@ function calcular() {
               JSON.stringify([devedor.id, recebedor.id].sort(idCrescente))
             )
         ) {
-          dividas.push({
-            ids: { idDevedor: devedor.id, idRecebedor: recebedor.id },
-            valor: getValorVitoria() * recebedor.vitorias,
-          });
+          const valor = Math.max(0, getValorVitoria() * recebedor.vitorias);
+          if (valor > 0) {
+            dividas.push({
+              ids: { idDevedor: devedor.id, idRecebedor: recebedor.id },
+              valor,
+            });
+          }
         } else {
           const divida = dividas.find(
             (d) =>
